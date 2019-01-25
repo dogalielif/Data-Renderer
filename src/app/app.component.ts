@@ -13,9 +13,11 @@ export class AppComponent {
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.dataService.getData().subscribe(data => {
-      this.data = data;
-      this.isLoading = false;
-    });
+    setTimeout(() => {
+      this.dataService.getData().subscribe(data => {
+        this.data = data;
+        this.isLoading = false;
+      });
+    }, 100000);
   }
 }

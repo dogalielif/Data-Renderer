@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { SpinnerModule } from './+lib/spinner/spinner.module';
+
 
 @NgModule({
   declarations: [
@@ -11,6 +13,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    SpinnerModule
   ],
   bootstrap: [AppComponent]
 })

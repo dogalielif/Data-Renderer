@@ -1,0 +1,260 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999 !important;
+    background-color: rgba(51,51,51,0.8);
+  }
+  
+  .overlay>div {
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+  
+  .loading-text {
+    top: 60% !important;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .moving-shape-container.size-medium {
+  width: 64px;
+  height: 64px
+}
+
+.moving-shape-container,
+.moving-shape-container>.shape {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.moving-shape-container {
+  display: block;
+  font-size: 0;
+  color: #fff;
+}
+
+.moving-shape-container.la-dark {
+  color: #333;
+}
+
+.moving-shape-container>.shape {
+  display: inline-block;
+  float: none;
+  background-color: rgba(255,255,255, 0.8);
+  border: 0 solid rgba(255,255,255, 0.8);
+}
+
+.moving-shape-container {
+  width: 32px;
+  height: 32px
+}
+
+.moving-shape-container>div:nth-child(1) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 60%;
+  height: 60%;
+  background: rgba(255,255,255, 0.8);
+  border-radius: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-animation: moving-object-shrink 4.5s infinite linear;
+  -moz-animation: moving-object-shrink 4.5s infinite linear;
+  -o-animation: moving-object-shrink 4.5s infinite linear;
+  animation: moving-object-shrink 4.5s infinite linear
+}
+
+.moving-shape-container>div:not(:nth-child(1)) {
+  position: absolute;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+  -webkit-animation: moving-object-zindex 1.5s 0s infinite steps(2, end);
+  -moz-animation: moving-object-zindex 1.5s 0s infinite steps(2, end);
+  -o-animation: moving-object-zindex 1.5s 0s infinite steps(2, end);
+  animation: moving-object-zindex 1.5s 0s infinite steps(2, end)
+}
+
+.moving-shape-container>div:not(:nth-child(1)):before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  margin-left: -5px;
+  content: "";
+  background: #fff;
+  border-radius: 50%;
+  opacity: .75;
+  -webkit-animation: moving-object-position 1.5s 0s infinite ease, moving-object-size 1.5s 0s infinite ease;
+  -moz-animation: moving-object-position 1.5s 0s infinite ease, moving-object-size 1.5s 0s infinite ease;
+  -o-animation: moving-object-position 1.5s 0s infinite ease, moving-object-size 1.5s 0s infinite ease;
+  animation: moving-object-position 1.5s 0s infinite ease, moving-object-size 1.5s 0s infinite ease;
+}
+
+.moving-shape-container>div:nth-child(2) {
+  -webkit-animation-delay: .75s;
+  -moz-animation-delay: .75s;
+  -o-animation-delay: .75s;
+  animation-delay: .75s
+}
+
+.moving-shape-container>div:nth-child(3) {
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  -o-transform: rotate(120deg);
+  transform: rotate(120deg);
+  -webkit-animation-delay: -.25s;
+  -moz-animation-delay: -.25s;
+  -o-animation-delay: -.25s;
+  animation-delay: -.25s
+}
+
+.moving-shape-container>div:nth-child(4) {
+  -webkit-transform: rotate(240deg);
+  -moz-transform: rotate(240deg);
+  -ms-transform: rotate(240deg);
+  -o-transform: rotate(240deg);
+  transform: rotate(240deg);
+  -webkit-animation-delay: .25s;
+  -moz-animation-delay: .25s;
+  -o-animation-delay: .25s;
+  animation-delay: .25s
+}
+
+.moving-shape-container.size-medium>div:not(:nth-child(1)):before {
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px
+}
+
+@-webkit-keyframes moving-object-position {
+  50% {
+    top: 100%;
+    left: 100%
+  }
+}
+
+@-moz-keyframes moving-object-position {
+  50% {
+    top: 100%;
+    left: 100%
+  }
+}
+
+@-o-keyframes moving-object-position {
+  50% {
+    top: 100%;
+    left: 100%
+  }
+}
+
+@keyframes moving-object-position {
+  50% {
+    top: 100%;
+    left: 100%
+  }
+}
+
+@-webkit-keyframes moving-object-size {
+  50% {
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5)
+  }
+}
+
+@-moz-keyframes moving-object-size {
+  50% {
+    -moz-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5)
+  }
+}
+
+@-o-keyframes moving-object-size {
+  50% {
+    -o-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5)
+  }
+}
+
+@keyframes moving-object-size {
+  50% {
+    -webkit-transform: scale(0.5, 0.5);
+    -moz-transform: scale(0.5, 0.5);
+    -o-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5)
+  }
+}
+
+@-webkit-keyframes moving-object-zindex {
+  50% {
+    z-index: 10
+  }
+}
+
+@-moz-keyframes moving-object-zindex {
+  50% {
+    z-index: 10
+  }
+}
+
+@-o-keyframes moving-object-zindex {
+  50% {
+    z-index: 10
+  }
+}
+
+@keyframes moving-object-zindex {
+  50% {
+    z-index: 10
+  }
+}
+
+@-webkit-keyframes moving-object-shrink {
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(0.8, 0.8);
+    transform: translate(-50%, -50%) scale(0.8, 0.8)
+  }
+}
+
+@-moz-keyframes moving-object-shrink {
+  50% {
+    -moz-transform: translate(-50%, -50%) scale(0.8, 0.8);
+    transform: translate(-50%, -50%) scale(0.8, 0.8)
+  }
+}
+
+@-o-keyframes moving-object-shrink {
+  50% {
+    -o-transform: translate(-50%, -50%) scale(0.8, 0.8);
+    transform: translate(-50%, -50%) scale(0.8, 0.8)
+  }
+}
+
+@keyframes moving-object-shrink {
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(0.8, 0.8);
+    -moz-transform: translate(-50%, -50%) scale(0.8, 0.8);
+    -o-transform: translate(-50%, -50%) scale(0.8, 0.8);
+    transform: translate(-50%, -50%) scale(0.8, 0.8)
+  }
+}
