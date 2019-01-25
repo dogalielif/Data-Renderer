@@ -1,0 +1,14 @@
+.menu-item-container {
+    background-color: #b899a1;
+    display: none;
+}
+.checkbox-indigo[type="checkbox"] + label:before{
+    border: 2px solid indigo;
+    background: transparent;
+  }
+  .checkbox-indigo[type="checkbox"]:checked + label:before{
+    border: 2px solid transparent;
+    border-bottom: 2px solid indigo;
+    border-right: 2px solid indigo;
+    background: transparent;
+  }

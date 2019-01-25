@@ -1,0 +1,32 @@
+.menu-container {
+  background-color: #d8cbc6;
+  margin-bottom: 10px;
+
+  .element {
+    border-style: solid;
+    border-color: black;
+    border-radius: 5px;
+    height: 5vh;
+
+    img {
+      position: relative;
+      float: right;
+      width: 10px;
+      margin: 10 0 10 0;
+      margin-top: 12px;
+      margin-right: 10px;
+    }
+
+    .key {
+      display: inline;
+      position: relative;
+      margin-top: 5px;
+      margin-left: 10px;
+      float: left;
+      color: black;
+    }
+  }
+  app-menu {
+    display: none;
+  }
+}

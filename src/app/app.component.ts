@@ -18,6 +18,6 @@ export class AppComponent {
         this.data = data;
         this.isLoading = false;
       });
-    }, 100000);
+    }, 1000);
   }
 }

@@ -1,0 +1,11 @@
+<div class="menu-container" *ngFor="let obj of menuObjects">
+  <div class=element>
+    <div class="key">{{ obj.key }}</div>
+    <img [src]="pictureUrl" />
+  </div>
+  <app-menu
+    [data]="obj.data"
+    *ngIf="isObject(obj.data)"
+  ></app-menu>
+  <app-menu-item *ngIf="!isObject(obj.data)" [data]="obj.data"></app-menu-item>
+</div>

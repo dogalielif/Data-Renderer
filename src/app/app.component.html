@@ -3,7 +3,7 @@
   <app-spinner *ngIf="isLoading"></app-spinner>
 
   <div *ngIf="!isLoading">
-    Data will be displayed here!!
+    <app-menu [data]="this.data"></app-menu>
   </div>
 
 </div>
