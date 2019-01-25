@@ -1,31 +1,36 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-describe('AppComponent', () => {
+import { FormsModule } from "@angular/forms";
+
+import { AppComponent } from "./app.component";
+import { MenuComponent, MenuItemComponent } from "./components";
+import { SpinnerComponent } from "./+lib/spinner/spinner.component";
+
+describe("AppComponent", () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+  let spy: any;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        SpinnerComponent,
+        MenuComponent,
+        MenuItemComponent,
       ],
+      imports: [FormsModule, HttpClientTestingModule ]
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'Data-Renderer'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Data-Renderer');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Data-Renderer!');
+  });
+
+  it("should create", () => {
+    expect(component).toBeTruthy();
   });
 });
