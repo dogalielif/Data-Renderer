@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { MenuComponent, MenuItemComponent } from './components';
-import { SpinnerModule } from './+lib/spinner/spinner.module';
+import { SpinnerModule } from './+lib';
 
 @NgModule({
   declarations: [

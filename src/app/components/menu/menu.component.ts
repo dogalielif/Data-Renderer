@@ -11,8 +11,6 @@ export class MenuComponent implements OnInit {
 
   @Input() data;
   menuObjects: MenuObject[] = [];
-  isExtended = false;
-  pictureUrl = '../../../../../assets/icons/add.png'
 
   constructor() { }
 
@@ -33,15 +31,5 @@ export class MenuComponent implements OnInit {
     }
     
     return false;
-  }
-
-  toggleMenu() {
-    if(this.isExtended) {
-      this.isExtended=false;
-      this.pictureUrl = '../../../../../assets/icons/remove.png'
-    } else {
-      this.isExtended=true;
-      this.pictureUrl = '../../../../../assets/icons/add.png'
-    }
   }
 }

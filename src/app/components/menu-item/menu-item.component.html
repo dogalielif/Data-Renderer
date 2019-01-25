@@ -1,7 +1,7 @@
 <div class="menu-item-container">
   <textarea *ngIf="getType() == 'string'">{{this.data}}</textarea>
   <div *ngIf="getType() == 'boolean'">
-    <input type="checkbox" class="checkbox-indigo" [checked]="this.data"/>
+    <input type="checkbox" class="checkbox" [checked]="this.data"/>
     <label>{{this.data}}</label>
   </div>
   <div *ngIf="getType() == 'number'">

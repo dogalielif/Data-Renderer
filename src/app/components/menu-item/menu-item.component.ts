@@ -1,4 +1,4 @@
-import { ElementRef, ViewChild, Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-menu-item',
