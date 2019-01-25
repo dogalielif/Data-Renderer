@@ -1,10 +1,15 @@
 <div class="menu-item-container">
-  <textarea *ngIf="getType() == 'string'">{{this.data}}</textarea>
-  <div *ngIf="getType() == 'boolean'">
-    <input type="checkbox" class="checkbox" [checked]="this.data"/>
-    <label>{{this.data}}</label>
+  <textarea *ngIf="getType() == 'string'">{{ this.data }}</textarea>
+  <div class="checkbox-container" *ngIf="getType() == 'boolean'">
+    <input
+      class = "checkbox"
+      type="checkbox"
+      [checked]="this.data"
+      [(ngModel)] = "this.data"
+    />
+    <label>{{ (this.data).toString() | titlecase }}</label>
   </div>
   <div *ngIf="getType() == 'number'">
-      <input type="number" [value]="this.data"/>
+    <input type="number" [value]="this.data" />
   </div>
 </div>
