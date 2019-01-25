@@ -9,15 +9,21 @@ import { DataService } from "./services/data.service";
 export class AppComponent {
   data: Object = {};
   isLoading: boolean = true;
+  currentTimeout;
 
   constructor(private dataService: DataService) {}
 
+  // Here setTimeout has been added for checking the spinner 
   ngOnInit() {
-    setTimeout(() => {
+    this.currentTimeout = setTimeout(() => {
       this.dataService.getData().subscribe(data => {
         this.data = data;
         this.isLoading = false;
       });
     }, 1000);
+  }
+
+  ngOnDestroy() {
+    clearTimeout(this.currentTimeout);
   }
 }
